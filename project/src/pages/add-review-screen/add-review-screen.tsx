@@ -23,7 +23,7 @@ function AddReviewScreen(): JSX.Element {
                 <a href="film-page.html" className="breadcrumbs__link">The Grand Budapest Hotel</a>
               </li>
               <li className="breadcrumbs__item">
-                <a className="breadcrumbs__link">Add review</a>
+                <a href="#todo" className="breadcrumbs__link">Add review</a>
               </li>
             </ul>
           </nav>
@@ -35,7 +35,7 @@ function AddReviewScreen(): JSX.Element {
               </div>
             </li>
             <li className="user-block__item">
-              <a className="user-block__link">Sign out</a>
+              <a href="#todo" className="user-block__link">Sign out</a>
             </li>
           </ul>
         </header>
@@ -46,7 +46,7 @@ function AddReviewScreen(): JSX.Element {
       </div>
 
       <div className="add-review">
-        <form action="#" className="add-review__form">
+        <form className="add-review__form">
           <div className="rating">
             <div className="rating__stars">
               <input className="rating__input" id="star-10" type="radio" name="rating" value="10" />
