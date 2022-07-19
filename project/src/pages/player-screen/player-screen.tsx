@@ -1,7 +1,14 @@
-function PlayerScreen(): JSX.Element {
+import { FilmsType } from '../../types/films';
+
+type MoviePlayerScreen = {
+  film: FilmsType,
+}
+
+function PlayerScreen({film}: MoviePlayerScreen): JSX.Element {
+  const {video} = film;
   return (
     <div className="player">
-      <video src="#" className="player__video" poster="img/player-poster.jpg"></video>
+      <video src={video} className="player__video" poster="img/player-poster.jpg"></video>
 
       <button type="button" className="player__exit">Exit</button>
 

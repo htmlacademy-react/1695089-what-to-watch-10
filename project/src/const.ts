@@ -1,10 +1,11 @@
 export enum AppRoute {
   Main = '/',
-  SingIn = '/sing-in-screen',
-  MyList = '/my-list-screen',
-  Movie = '/movie-screen',
-  AddReview = '/add-review-screen',
-  Player = '/player-screen',
+  SingIn = 'singin',
+  MyList = 'mylist',
+  Movie = 'movie/:id',
+  AddReview = 'addreview',
+  Player = 'player',
+  NotFound = '*',
 }
 
 export enum AuthorizationStatus {
