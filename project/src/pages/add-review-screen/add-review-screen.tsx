@@ -8,7 +8,7 @@ type AddReviewScreenType = {
 
 
 function AddReviewScreen({film}: AddReviewScreenType): JSX.Element {
-  const {bigPicture,title,picture} = film;
+  const {bigPicture, title, picture} = film;
 
   return (
     <section className="film-card film-card--full">

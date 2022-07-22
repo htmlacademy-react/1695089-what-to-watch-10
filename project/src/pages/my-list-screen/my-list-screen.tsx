@@ -1,4 +1,4 @@
-import Film from '../../components/film/film';
+import FilmsList from '../../components/films-list/films-list';
 import { FilmsType } from '../../types/films';
 import Logo from '../../components/logo/logo';
 
@@ -30,10 +30,7 @@ function MyListScreen({films}: MyListScreenType): JSX.Element {
 
       <section className="catalog">
         <h2 className="catalog__title visually-hidden">Catalog</h2>
-
-        <div className="catalog__films-list">
-          {films.map((film) => <Film picture={film.picture} title={film.title} key={film.id} />)}
-        </div>
+        <FilmsList films={films}/>
       </section>
 
       <footer className="page-footer">

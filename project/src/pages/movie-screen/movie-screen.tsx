@@ -1,7 +1,7 @@
 import { FilmsType } from '../../types/films';
 import Logo from '../../components/logo/logo';
-import {useParams} from 'react-router-dom';
-import {useState} from 'react';
+import {Navigate, useParams} from 'react-router-dom';
+import {AppRoute} from '../../const';
 
 type MovieScreenType = {
   films: FilmsType[],
@@ -9,17 +9,13 @@ type MovieScreenType = {
 
 
 function MovieScreen({films}: MovieScreenType): JSX.Element {
-  const [filmActive, setFilmActive] = useState({
-    id: '',
-  });
 
-  const idActive = useParams();
-  // eslint-disable-next-line no-console
-  console.log(idActive);
-  // eslint-disable-next-line no-console
-  console.log(films);
+  const { id } = useParams();
+  const film = films.find((movie) => movie.id === id);
 
-  const film: FilmsType = films.find((movie) => movie.id === idActive.id);
+  if (!film) {
+    return <Navigate to={AppRoute.NotFound} />;
+  }
 
   const {
     title,
@@ -33,7 +29,7 @@ function MovieScreen({films}: MovieScreenType): JSX.Element {
     description,
     director,
     starring
-  } = film; // Не могупонять как нужно сделать (почему ошибка)
+  } = film;
 
   return (
     <>

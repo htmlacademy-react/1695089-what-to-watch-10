@@ -17,7 +17,7 @@ export type FilmsType = {
   starring: string[],
   director: string,
   description: string,
-  rating:number,
+  rating: number,
   ratingLevel: string,
   ratingCount: number,
   reviews: ReviewType[]
