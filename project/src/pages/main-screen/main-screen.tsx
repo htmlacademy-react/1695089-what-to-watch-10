@@ -1,7 +1,11 @@
-import Film from '../../components/film/film';
-import {filmsMock} from '../../mock/film';
+import FilmsList from '../../components/films-list/films-list';
+import { FilmsType } from '../../types/films';
 
-function MainScreen(): JSX.Element {
+type MainScreenProps = {
+  films: FilmsType[];
+}
+
+function MainScreen({films}: MainScreenProps): JSX.Element {
   return (
     <>
       <section className="film-card">
@@ -101,10 +105,7 @@ function MainScreen(): JSX.Element {
             </li>
           </ul>
 
-          <div className="catalog__films-list">
-
-            {filmsMock.map((film) => <Film picture={film.picture} title={film.title} key={film.id} />)}
-          </div>
+          <FilmsList films={films}/>
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
